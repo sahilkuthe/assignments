@@ -21,8 +21,8 @@ export function Assignment2() {
     const [filter, setFilter] = useState("");
 
     const filteredSentences = useMemo(() => {
-        sentences.filter(x => x.includes(filter))
-    }, [filter])
+        return sentences.filter(x => x.includes(filter));
+    }, [sentences, filter])
 
     return <div>
         <input type="text" onChange={(e) => {
